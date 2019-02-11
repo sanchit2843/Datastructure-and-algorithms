@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
 int fibonacci(int n)
 {
 if(n==1 || n==0)
@@ -12,9 +16,10 @@ else
 int main()
 {
 int a = 10;
+int i=0;
 while(i<a)
 {
-  cout<<fibonacci(i);
+cout<<" "<<fibonacci(i);
 i++;
 }
 }
