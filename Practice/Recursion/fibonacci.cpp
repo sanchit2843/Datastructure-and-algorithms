@@ -1,19 +1,20 @@
 int fibonacci(int n)
 {
-int a;
-a = fibonacci(n-1) + fibonacci(n-2);
-if(n==1)
+if(n==1 || n==0)
 {
-return 1;
+return n;
 }
-if(n==0)
+else
 {
-
-return 0;
+  return (fibonacci(n-1) + fibonacci(n-2));
 }
 }
 int main()
 {
 int a = 10;
-cout<<fibonacci(a);
+while(i<a)
+{
+  cout<<fibonacci(i);
+i++;
+}
 }
