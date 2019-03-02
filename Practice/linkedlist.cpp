@@ -74,17 +74,17 @@ public:
 
     void reverse(Node *&head)
     {
-        Node *next = head;
-        Node *prev = head;
-        Node *first = head;
-        next = next->head;
-        while(first->head!=NULL)
+        Node *next;
+        Node *prev = NULL;
+        Node *current = head;
+        while(current!=NULL)
         {
-            next->head = prev->head;
-            first = first->head;
-            prev = prev->head;
+            next = current->head;
+            current->head = prev;
+            prev =current;
+            current = next;
         }
-        first->head = NULL;
+        head = prev;
     }
 
 };
