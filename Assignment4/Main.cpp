@@ -233,11 +233,11 @@ void search(){
 
 void Insert_In_Sorted_Linked_List(node *&head,int d)
 {
-	if(head->data>d)
-	{
-    	Insert_at_Beginning(head,d);
-    	return;
-	}
+  	if(head->data>d)
+  	{
+      	Insert_at_Beginning(head,d);
+      	return;
+  	}
 	node *temp =head;
 	while(temp->next!=NULL && temp->next->data<d)
 	{
