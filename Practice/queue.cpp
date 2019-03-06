@@ -34,8 +34,7 @@ class queue s;
 s.push(10);
 s.push(10);
 s.push(30);
-s.push(10);
-s.push(40);
+
 s.display();
 s.pop();
 s.display();
