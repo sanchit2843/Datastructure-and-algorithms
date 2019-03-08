@@ -5,7 +5,8 @@ using namespace std;
 struct Node {
   int data;
   Node* head;
-} ;
+  Node* prev;
+};
 
 class Linkedlist
 {
@@ -15,11 +16,15 @@ public:
     struct Node *n = new Node;
     n->data = data;
     n->head = head;
+    n->prev = NULL;
+    if(head!=NULL)
+    {
+      head->prev = n;
+    }
     head = n;
   }
   void display(Node *&head)
   {
-
       Node* tmp;
       tmp = head;
       while (tmp!=NULL)
@@ -35,10 +40,10 @@ public:
       Node *tail = head;
       while(tail->head!=NULL)
       {
-
           tail = tail->head;
       }
       tail->head = n;
+      n->prev = tail;
       n->data = data;
       n->head = NULL;
   }
@@ -52,8 +57,8 @@ public:
         tail = tail->head;
         i++;
     }
-    head = tail->head;
-    delete tail;
+    next = tail->head;
+    tail->head = next;
   }
   void Insert_in_middle(Node *&head,int data , int point)
   {
@@ -70,38 +75,41 @@ public:
       tail->head = n;
       n->data = data;
       n->head = next;
-}
-
-    void reverse(Node *&head)
-    {
-        Node *next;
-        Node *prev = NULL;
-        Node *current = head;
-        while(current!=NULL)
-        {
-            next = current->head;
-            current->head = prev;
-            prev =current;
-            current = next;
-        }
-        head = prev;
     }
 
+    void displayreverse(Node *&head)
+    {
+        Node *temp = head;
+
+        while(temp->head!=NULL)
+        {
+          temp = temp->head;
+        }
+
+        while(temp!=NULL)
+        {
+          cout<<temp->data;
+          temp = temp->prev;
+        }
+    }
 };
 
+void sanchit(int &a)
+{
+  a=5;
+}
 int main()
 {
 Linkedlist a;
 
 Node *head = NULL;
+
 a.Insert_at_Beginning(head , 9);
 a.Insert_at_Beginning(head , 6);
 a.Insert_at_Beginning(head , 7);
 a.Insert_at_end(head , 5);
 a.Insert_at_Beginning(head , 8);
-a.Insert_in_middle(head,12 , 3);
+//a.Insert_in_middle(head,12 , 3);
 a.display(head);
-a.Delete(head,1);
-//a.reverse(head);
-a.display(head);
+a.displayreverse(head);
 }
