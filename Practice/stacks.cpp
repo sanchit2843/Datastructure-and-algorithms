@@ -22,7 +22,8 @@ public:
   }
   void display()
   {
-    for(int i=0;i<top;i++)
+    cout<<top<<endl;
+    for(int i=top-1;i>=0;i--)
     {
       cout<<a[i]<<" ";
     }
