@@ -44,6 +44,7 @@ void printIN(Node *root)
   cout<<root->data;
   printIN(root->right);
 }
+
 void printPOST(Node *root)
 {
   if(root==NULL)
@@ -98,19 +99,40 @@ int diameter(Node *root)
     int r = maxdepth(root->right);
     return (r+l-1);
 }
+Node *insertbst(Node *root, int data)
+{
+  if(root== NULL)
+  {
+    return new Node(data);
+  }
+  if(data<=root->data)
+  {
+    root->left = insertbst(root->left,data);
+  }
+  else
+  {
+    root->right = insertbst(root->right,data);
+  }
+  return root;
+}
+
+Node *build(Node *root)
+{
+  int d;
+  cin>>d;
+  while(d!=-1)
+  {
+    root = insertbst(root,d);
+    cin>>d;
+    cout<<d;
+  }
+  return root;
+}
 int main()
 {
-  Node *root = buildtree();
-  //print(root);
-  //cout<<endl;
-  //printIN(root);
-  //cout<<endl;
-  //printPOST(root);
-  int a = maxdepth(root);
-  cout<<endl;
-  cout<<a;
-  bfs(root);
-  cout<<endl;
 
-  cout<<diameter(root);
+  Node *root = build(root);
+  printIN(root);
+  cout<<endl;
+  bfs(root);
 }
