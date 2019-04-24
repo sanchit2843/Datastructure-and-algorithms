@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 using namespace std;
 
 struct Node
@@ -52,6 +53,35 @@ void printPOST(Node *root)
 
   cout<<root->data;
 }
+int maxdepth(Node *root)
+{
+  if(root==NULL)
+  {
+    return 0;
+  }
+  else
+  {
+    int ldepth = maxdepth(root->left);
+    int rdepth = maxdepth(root->right);
+    if(ldepth>rdepth)
+    {
+      return (ldepth+1);
+    }
+    else
+    {
+      return (rdepth+1);
+    }
+  }
+}
+void bfs(Node *root)
+{
+  queue<Node*> q;
+  q.push(root->data);
+  while(!q.empty())
+  {
+    
+  }
+}
 
 int main()
 {
@@ -61,5 +91,6 @@ int main()
   printIN(root);
   cout<<endl;
   printPOST(root);
-
+  int a = maxdepth(root);
+  cout<<a;
 }
