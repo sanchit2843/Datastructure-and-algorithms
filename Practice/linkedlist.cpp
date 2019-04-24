@@ -61,6 +61,7 @@ public:
       struct Node *n = new Node;
       Node *tail = head;
       Node *next = head;
+
       while(i<point-1)
       {
           tail = tail->head;
@@ -87,21 +88,59 @@ public:
         head = prev;
     }
 
+    bool compare_ll(Node *&head1, Node *&head2)
+    {
+      Node* tmp1;
+      Node* tmp2;
+      tmp1 = head1;
+      tmp2 = head2;
+      int len2 = 0;
+      int len1=0;
+      while (tmp2!=NULL)
+      {
+          tmp2=tmp2->head;
+          len2++;
+      }
+      tmp2 = head2;
+      while(tmp1!= NULL)
+      {
+        if(tmp1->data == tmp2->data)
+        {
+          tmp1 = tmp1->head;
+          tmp2 = tmp2->head;
+        }
+        else
+        {
+          return false;
+        }
+        len1++;
+      }
+      if(len1==len2){
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+
 };
 
 int main()
 {
 Linkedlist a;
 
-Node *head = NULL;
-a.Insert_at_Beginning(head , 9);
-a.Insert_at_Beginning(head , 6);
-a.Insert_at_Beginning(head , 7);
-a.Insert_at_end(head , 5);
-a.Insert_at_Beginning(head , 8);
-a.Insert_in_middle(head,12 , 3);
-a.display(head);
-a.Delete(head,1);
-//a.reverse(head);
-a.display(head);
+Node *head1 = NULL;
+Node *head2 = NULL;
+a.Insert_at_Beginning(head1 , 9);
+a.Insert_at_Beginning(head1 , 6);
+a.Insert_at_Beginning(head1 , 7);
+a.display(head1);
+a.Insert_at_Beginning(head2 , 9);
+a.Insert_at_Beginning(head2 , 6);
+a.Insert_at_Beginning(head2 , 7);
+a.display(head2);
+bool b = a.compare_ll(head1,head2);
+cout<<b;
+
 }

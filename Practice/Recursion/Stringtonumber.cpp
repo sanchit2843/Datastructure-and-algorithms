@@ -1,10 +1,9 @@
 #include <iostream>
 using namespace std;
 
-int string_2_integer()
+int string_2_integer(string a)
 {
-  int a=0;
-return a;
+
 }
 int main()
 {
