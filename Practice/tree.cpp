@@ -76,10 +76,20 @@ int maxdepth(Node *root)
 void bfs(Node *root)
 {
   queue<Node*> q;
-  q.push(root->data);
+  q.push(root);
   while(!q.empty())
   {
-    
+    Node *f = q.front();
+    cout<<f->data;
+    if(f->left)
+    {
+      q.push(f->left);
+    }
+    if(f->right)
+    {
+      q.push(f->right);
+    }
+    q.pop();
   }
 }
 
@@ -88,9 +98,11 @@ int main()
   Node *root = buildtree();
   print(root);
   cout<<endl;
-  printIN(root);
+  //printIN(root);
   cout<<endl;
-  printPOST(root);
+  //printPOST(root);
   int a = maxdepth(root);
+  cout<<endl;
   cout<<a;
+  bfs(root);
 }
