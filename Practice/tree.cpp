@@ -92,17 +92,25 @@ void bfs(Node *root)
     q.pop();
   }
 }
-
+int diameter(Node *root)
+{
+    int l = maxdepth(root->left);
+    int r = maxdepth(root->right);
+    return (r+l-1);
+}
 int main()
 {
   Node *root = buildtree();
-  print(root);
-  cout<<endl;
+  //print(root);
+  //cout<<endl;
   //printIN(root);
-  cout<<endl;
+  //cout<<endl;
   //printPOST(root);
   int a = maxdepth(root);
   cout<<endl;
   cout<<a;
   bfs(root);
+  cout<<endl;
+
+  cout<<diameter(root);
 }
