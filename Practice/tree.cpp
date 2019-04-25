@@ -124,13 +124,11 @@ Node *build(Node *root)
   {
     root = insertbst(root,d);
     cin>>d;
-    cout<<d;
   }
   return root;
 }
 int main()
 {
-
   Node *root = build(root);
   printIN(root);
   cout<<endl;
