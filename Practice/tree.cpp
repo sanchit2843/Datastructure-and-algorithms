@@ -27,6 +27,7 @@ Node* buildtree()
   root->right = buildtree();
   return root;
 }
+
 void print(Node *root)
 {
   if(root==NULL)
@@ -127,10 +128,29 @@ Node *build(Node *root)
   }
   return root;
 }
+
+int findmax(Node *root)
+{
+  int max;
+  if(root!=NULL)
+  {
+    int data = root->data;
+    int left = findmax(root->left);
+    int right = findmax(root->right);
+    if(left>right)
+      max = left;
+    if(right>left)
+      max = right;
+    if(data>max)
+      max = data;
+    return max;
+  }
+}
 int main()
 {
   Node *root = build(root);
+
   printIN(root);
-  cout<<endl;
-  bfs(root);
+  int max = findmax(root);
+  cout<<max<<endl;
 }
