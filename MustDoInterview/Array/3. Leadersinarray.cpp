@@ -20,7 +20,7 @@ int main() {
 	    int count = 0;
 	    for(int i = len-1;i>=0;i--)
 	    {
-	        if(a[i]>max)
+	        if(a[i]>=max)
 	        {
 	            max = a[i];
 	            b[count] = a[i];
