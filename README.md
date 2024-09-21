@@ -81,6 +81,7 @@ https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357
 https://www.youtube.com/playlist?list=PL7g1jYj15RUOjoeZAJsWjwV8XUo9r0hwc
 https://www.youtube.com/watch?v=xo7XrRVxH8Y
 https://www.youtube.com/watch?v=DjYZk8nrXVY
+https://github.com/dipjul/Grokking-the-Coding-Interview-Patterns-for-Coding-Questions
 
 #### **Mock Interviews and Testing (During Week 4)**
 - **Day 5:** Attempt one full-length mock interview on LeetCode, focusing on the problems covered so far.
