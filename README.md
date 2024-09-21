@@ -76,6 +76,12 @@ The **1-month plan** will cover the most essential topics, giving you broad expo
   - **Day 7: Review Day**
     - Review tree and graph problems.
 
+### Now is a good time to study some of the patterns in the leet code questions and try to solve more advanced algorithm. You can start by targeting each pattern, doing 4-5 questions for each and then moving on to more complex problems once these patterns are covered. 
+https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed
+https://www.youtube.com/playlist?list=PL7g1jYj15RUOjoeZAJsWjwV8XUo9r0hwc
+https://www.youtube.com/watch?v=xo7XrRVxH8Y
+https://www.youtube.com/watch?v=DjYZk8nrXVY
+
 #### **Mock Interviews and Testing (During Week 4)**
 - **Day 5:** Attempt one full-length mock interview on LeetCode, focusing on the problems covered so far.
 
